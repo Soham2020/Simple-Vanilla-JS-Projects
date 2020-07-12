@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT-COLOR FLIPPER</title>
+</head>
+<body>
+    
+    <style>
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: tomato;
+            padding: 4rem 0;
+            font-size: xx-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: pointer;
+        }
+        .footer{
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+        }
+    </style>
+
+    <div class="box">
+        <p id="myP" onmouseover="mouseDown()" onmouseleave="mouseUp()">Move Your Mouse</p>
+    </div>
+    <div class="footer">
+        <nav>
+            <h2>Made By Soham Das</h2>
+        </nav>
+    </div>
+    
+        
+        <script>
+        function mouseDown() {
+          document.getElementById("myP").style.color = "blue";
+        }
+        
+        function mouseUp() {
+          document.getElementById("myP").style.color = "green";
+        }
+        </script>
+</body>
+</html>
