@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP-WATCH</title>
+</head>
+<body class="body">
+    <style>
+        .body{
+            background-color: aquamarine;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            font-family: cursive;
+            font-size: 60px;
+        }
+        .timer{
+            display: flex;
+            justify-content: center;
+        }
+        .submit{
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            justify-items: space-evenly;
+        }
+        #button-start{
+            box-sizing: border-box;
+            height: 100%;
+            background-color: black;
+            color: white;
+            height: 3rem;
+            font-size: 16px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+        #button-stop{
+            box-sizing: border-box;
+            height: 100%;
+            background-color: black;
+            color: white;
+            height: 3rem;
+            font-size: 16px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+        #button-reset{
+            box-sizing: border-box;
+            height: 100%;
+            background-color: black;
+            color: white;
+            height: 3rem;
+            font-size: 16px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+        .timer{
+            font-size: xx-large;
+            font-weight: 50px;
+            font-family: cursive;
+        }
+        .made{
+            margin-left: 1500px;
+        }
+    </style>
+
+    <div class="container">
+        <h1>INSTANT STOP-WATCH</h1>
+    </div>
+    <div class="timer">
+    <p>
+        <span id="seconds">00</span>:<span id="tens">00</span>
+    </p>
+    </div>
+    <div class="submit">
+        <button id="button-start">START</button>
+        <button id="button-stop">STOP</button>
+        <button id="button-reset">RESET</button>
+    </div>
+    <h5 class="made">MADE BY SOHAM DAS</h5>
+
+    <script>
+            window.onload = function () {
+  
+                    var seconds = "00"; 
+                    var tens = "00"; 
+                    var appendTens = document.getElementById("tens")
+                    var appendSeconds = document.getElementById("seconds")
+                    var buttonStart = document.getElementById('button-start');
+                    var buttonStop = document.getElementById('button-stop');
+                    var buttonReset = document.getElementById('button-reset');
+                    var Interval ;
+
+                    buttonStart.onclick = function() {
+                        
+                        clearInterval(Interval);
+                        Interval = setInterval(startTimer, 10);
+                    }
+                    
+                        buttonStop.onclick = function() {
+                        clearInterval(Interval);
+                    }
+                    
+
+                    buttonReset.onclick = function() {
+                        clearInterval(Interval);
+                        tens = "00";
+                        seconds = "00";
+                        appendTens.innerHTML = tens;
+                        appendSeconds.innerHTML = seconds;
+                    }
+                    
+                    
+                    
+                    function startTimer () {
+                        tens++; 
+                        
+                        if(tens < 9){
+                        appendTens.innerHTML = "0" + tens;
+                        }
+                        
+                        if (tens > 9){
+                        appendTens.innerHTML = tens;
+                        
+                        } 
+                        
+                        if (tens > 99) {
+                        console.log("seconds");
+                        seconds++;
+                        appendSeconds.innerHTML = "0" + seconds;
+                        tens = 0;
+                        appendTens.innerHTML = "0" + 0;
+                        }
+                        
+                        if (seconds > 9){
+                        appendSeconds.innerHTML = seconds;
+                        }
+                    
+                    }
+                    
+
+                    }
+
+        
+    </script>
+</body>
+</html>
