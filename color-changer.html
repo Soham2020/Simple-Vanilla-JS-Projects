@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOR-TWISTER</title>
+</head>
+<body id="body">
+    <style>
+        
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: bisque;
+            width: 100%;
+            min-height: 100vh;
+        }
+        #text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+            padding-top: 2rem;
+            font-size: 40px;
+        }
+        .container{
+            display: none;
+        }
+        .button{
+            box-sizing: border-box;
+            height: 100%;
+            background-color: black;
+            color: white;
+            height: 3rem;
+            font-size: 16px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+        .button:hover{
+            background-color: black;
+            color: blanchedalmond;
+            border-radius: 50%;
+            transition: 1s ease-in-out;
+        }
+        .submit{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            margin-top: 4rem;
+        }
+        .footer{
+            font-style: oblique;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-left: 1500px;
+        }
+    </style>
+
+    <h1 id="text">WANNA CHANGE COLOR</h1>
+    <div class="container">
+        <h3 id="col">Color-
+        <span id="change">rgb(0,0,0)</span></h3>
+    </div>
+    <div class="submit">
+        <button class="button" onclick="fun()">CHANGE ME</button>
+    </div>
+    <div class="footer">
+        <h5>MADE BY SOHAM DAS</h5>
+    </div>
+
+    <script>
+        function fun(){
+            color = "rgb("+Math.round(Math.random()*100)+","+Math.round(Math.random()*500)+","+Math.round(Math.random()*1000)+")";
+            document.getElementById("body").style.backgroundColor = color;
+            document.getElementById("change").innerHTML = color;
+        }
+    </script>
+</body>
+</html>
