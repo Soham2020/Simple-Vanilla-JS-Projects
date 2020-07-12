@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+</head>
+<body class="body">
+    <style>
+        .body{
+            background-color: burlywood;
+        }
+        .clock{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            size: 100%;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: cadetblue;
+        }
+        .clo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+            background-color: chartreuse;
+        }
+        .footer{
+            font-style: oblique;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-left: 1400px;
+        }
+    </style>
+    <div class="container">
+        <h1>CLOCK</h1>
+    </div>
+    <div class="clo">
+    <p id="clock"></p>
+    </div>
+
+    <div class="footer">
+        <h5>MADE BY SOHAM DAS</h5>
+    </div>
+
+
+    <script>
+        function time(){
+            let today = new Date();
+            let hour = today.getHours();
+            let mins = today.getMinutes();
+            let seconds = today.getSeconds();
+            document.getElementById("clock").innerHTML = hour + ":" + mins + ":" + seconds;
+        }
+        setInterval(time,100);
+    </script>
+</body>
+</html>
