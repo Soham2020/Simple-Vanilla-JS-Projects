@@ -1,2 +1,2 @@
 # Simple-Vanilla-JS-Projects
-Just tried very simple projects with vanilla javascript....
+It is an `Open Source Repository` for Simple JS Projects.
